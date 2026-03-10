@@ -1,0 +1,117 @@
+.addskill-page {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  padding: 40px;
+  background: #0f172a;
+  border-radius: 10px;
+  color: white;
+}
+
+/* TITLE */
+
+.addskill-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+
+.skill-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-form input,
+.skill-form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #1e293b;
+  color: white;
+  font-size: 14px;
+}
+
+/* BUTTON */
+
+.skill-form button {
+  padding: 12px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.skill-form button:hover {
+  background: #0ea5e9;
+}
+
+/* ICON PREVIEW */
+
+.icon-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.icon-preview svg {
+  font-size: 45px;
+  color: #38bdf8;
+}
+
+/* SKILL LIST */
+
+.skills-list {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+/* CARD */
+
+.skill-card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s;
+}
+
+.skill-card svg {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.skill-card span {
+  display: block;
+  font-size: 14px;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn {
+  margin-top: 8px;
+  padding: 5px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* HOVER EFFECT */
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}

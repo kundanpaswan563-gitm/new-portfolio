@@ -1,0 +1,226 @@
+/* ================= CONTACT SECTION ================= */
+
+.contact {
+  min-height: 80vh;
+  padding: 2rem 4%;
+  background: linear-gradient(135deg, #020617, #0f1729);
+  color: #e5e7eb;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Title */
+.contact-title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 4rem;
+}
+
+/* Content Layout */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* ================= LEFT INFO ================= */
+
+.contact-info h3 {
+  font-size: 1.6rem;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: #cbd5f5;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.contact-info li span {
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+/* ================= CONTACT FORM ================= */
+
+.contact-form {
+  position: relative;
+  background: rgba(3, 3, 3, 0.865);
+  padding: 2.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 🔥 Revolving White + Blue Border */
+.contact-form::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #38bdf8,
+    #ffffff,
+    #0ea5e9,
+     #4f2f01,
+    #ffffff
+  );
+  background-size: 300% 300%;
+  animation: rotateBorder 4s linear infinite;
+  z-index: -2;
+  filter: blur(6px);
+  opacity: 0.5;
+}
+
+/* Inner Dark Layer */
+.contact-form::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: rgba(15, 23, 42, 0.98);
+  border-radius: 14px;
+  z-index: -1;
+}
+
+/* Border Animation */
+@keyframes rotateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* ================= INPUT FIELDS ================= */
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover Effect */
+.contact-form input:hover,
+.contact-form textarea:hover {
+  border-color: rgba(56, 189, 248, 0.6);
+  background: rgba(56, 189, 248, 0.06);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(56, 189, 248, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #38bdf8;
+  background: rgba(1, 4, 5, 0.993);
+  box-shadow:
+    0 0 0 3px rgba(56, 189, 248, 0.25),
+   
+     0 8px 25px rgba(6, 165, 233, 0.25);
+      
+    
+  transform: translateY(-3px);
+}
+
+/* Placeholder Animation */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+  color: #38bdf8;
+  opacity: 0.8;
+}
+
+/* ================= BUTTON ================= */
+
+.contact-form button {
+  width: 100%;
+  padding: 0.9rem;
+  background: #e3e8eb;
+  color: #020617;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 5rem 6%;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+}
+.social-icons {
+  margin-top: -200px;
+  margin-left: 150px;
+  display: flex;
+  gap: 20px;
+  font-size: 48px;
+}
+
+.social-icons a {
+  color: #333;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #0077b5; /* LinkedIn blue effect */
+}

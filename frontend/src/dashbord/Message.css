@@ -1,0 +1,129 @@
+/* PAGE CONTAINER */
+
+.message-container {
+  min-height: 100vh;
+  padding: 80px 8%;
+  background:
+    radial-gradient(circle at top left, #1e293b, transparent 40%),
+    radial-gradient(circle at bottom right, #0f172a, transparent 40%),
+    #020617;
+  color: #e5e7eb;
+}
+
+
+/* TITLE */
+
+.message-title {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 45px;
+  font-weight: 600;
+
+  background: linear-gradient(90deg, #38bdf8, #a855f7);
+  
+  color: transparent;
+}
+
+
+/* GRID LAYOUT */
+
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+
+/* MESSAGE CARD */
+
+.message-card {
+  padding: 24px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.35s ease;
+}
+
+.message-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.18);
+}
+
+
+/* HEADER */
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.message-header h3 {
+  font-size: 18px;
+  color: #38bdf8;
+}
+
+
+/* EMAIL */
+
+.email {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #94a3b8;
+}
+
+
+/* MESSAGE TEXT */
+
+.message-text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: #e2e8f0;
+}
+
+
+/* DATE */
+
+.date {
+  font-size: 12px;
+  color: #64748b;
+}
+
+
+/* DELETE BUTTON */
+
+.delete-btn {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  color: white;
+
+  font-size: 13px;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+}
+
+
+/* LOADING & EMPTY STATE */
+
+.loading-text,
+.empty-text {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 40px;
+  color: #94a3b8;
+}
