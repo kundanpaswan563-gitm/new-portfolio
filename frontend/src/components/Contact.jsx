@@ -139,14 +139,14 @@ const Contact = () => {
   >
     <FaWhatsapp />
   </a> */}
-
+{/* 
   <a
     href="https://linkedin.com/in/yourusername"
     target="_blank"
     rel="noopener noreferrer"
   >
     <FaLinkedin />
-  </a>
+  </a> */}
 
   <a
     href="https://github.com/kundanpaswan263-git/mern-portfolio.git"
