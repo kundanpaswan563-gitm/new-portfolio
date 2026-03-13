@@ -3,7 +3,7 @@
 const nodemailer = require("nodemailer");
 const Message = require("../model/messageSchema");
 
-const User = require("../model/userSchema");  
+const User = require("../model/UserSchema");  
 const bcrypt = require("bcryptjs");          
 const jwt = require("jsonwebtoken");          
 // Nodemailer transporter with TLS fix
