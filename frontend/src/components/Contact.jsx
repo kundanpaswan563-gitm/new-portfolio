@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import Swal from "sweetalert2";   
-import { FaGithub } from "react-icons/fa";
+
 import API from "./Api";
+import { FaGithub } from "react-icons/fa";
 
 
 const Contact = () => {
@@ -130,7 +131,7 @@ const Contact = () => {
     target="_blank"
     rel="noopener noreferrer"
   >
-    <FaGithub size={35} />
+    <FaGithub />
   </a>
 </div>
 
