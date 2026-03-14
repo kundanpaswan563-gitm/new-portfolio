@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Message.css";
 import Swal from "sweetalert2";
+import API from "../components/Api";
 
 const Message = () => {
   const [messages, setMessages] = useState([]);
@@ -11,7 +12,7 @@ const Message = () => {
   // Fetch Messages
   const fetchMessages = async () => {
     try {
-      const res = await fetch("http://localhost:5000/messages", {
+      const res = await fetch(`${API}/messages`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

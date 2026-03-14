@@ -3,6 +3,7 @@ import profile from "../assets/profile.png";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API from "./Api";
 
 const Home = () => {
 
@@ -33,7 +34,7 @@ const Home = () => {
 
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/profile");
+        const res = await axios.get(`${API}/profile`);
         setProfileData(res.data);
       } catch (error) {
         console.log(error);
@@ -102,7 +103,7 @@ const Home = () => {
           <img
             src={
               profileData.profileImage
-                ? `http://localhost:5000/uploads/${profileData.profileImage}`
+                ? `${API}/uploads/${profileData.profileImage}`
                 : profile
             }
             alt="Profile"

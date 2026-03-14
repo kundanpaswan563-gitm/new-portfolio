@@ -4,6 +4,7 @@ import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
 import * as MdIcons from "react-icons/md";
 import "./Addskills.css";
+import API from "../components/Api";
 
 const icons = {
   ...FaIcons,
@@ -22,7 +23,7 @@ const Addskill = () => {
   }, []);
 
   const fetchSkills = async () => {
-    const res = await axios.get("http://localhost:5000/skills");
+    const res = await axios.get(`${API}/skills`);
     setSkills(res.data);
   };
 
@@ -30,7 +31,7 @@ const Addskill = () => {
 
     e.preventDefault();
 
-    await axios.post("http://localhost:5000/add-skill", {
+    await axios.post(`${API}/add-skills`, {
       name,
       icon,
     });
@@ -43,7 +44,7 @@ const Addskill = () => {
 
   const deleteSkill = async (id) => {
 
-    await axios.delete(`http://localhost:5000/delete-skill/${id}`);
+    await axios.delete(`${API}/delete-skills/${id}`);
 
     fetchSkills();
   };

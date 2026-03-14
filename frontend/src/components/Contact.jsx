@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import Swal from "sweetalert2";   
-import { FaInstagram, FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import API from "./Api";
 
 
 const Contact = () => {
@@ -27,7 +28,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/send", {
+      const res = await fetch(`${API}/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,37 +124,13 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="social-icons">
-  {/* <a
-    href="https://instagram.com/yourusername"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaInstagram />
-  </a> */}
-
-  {/* <a
-    href="https://wa.me/919501785419"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaWhatsapp />
-  </a> */}
-{/* 
+    <div className="social-icons">
   <a
-    href="https://linkedin.com/in/yourusername"
+    href="https://github.com/kundanpaswan563-gitm"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <FaLinkedin />
-  </a> */}
-
-  <a
-    href="https://github.com/kundanpaswan263-git/mern-portfolio.git"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaGithub />
+    <FaGithub size={35} />
   </a>
 </div>
 

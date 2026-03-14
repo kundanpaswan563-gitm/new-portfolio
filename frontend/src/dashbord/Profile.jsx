@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Profile.css";
 import axios from "axios";
+import API from "../components/Api";
 
 const Profile = () => {
 
@@ -26,7 +27,7 @@ const Profile = () => {
     }
 
     await axios.put(
-      "http://localhost:5000/update-profile",
+      `${API}/update-profile`,
       formData
     );
 

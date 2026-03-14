@@ -21,6 +21,7 @@ import Messages from "./Message";
 import AddSkills from "./Addskills";
 import AddProject from "./Addproject";
 import Profile from "./Profile";
+import API from "../components/Api";
 
 const Dashboard = () => {
 
@@ -42,17 +43,17 @@ const Dashboard = () => {
       const token = localStorage.getItem("token");
 
       // Messages (Protected Route)
-      const msg = await axios.get("http://localhost:5000/messages", {
+      const msg = await axios.get(`${API}/messages`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
 
       // Skills
-      const skills = await axios.get("http://localhost:5000/skills");
+      const skills = await axios.get(`${API}/skills`);
 
       // Projects
-      const projects = await axios.get("http://localhost:5000/projects");
+      const projects = await axios.get(`${API}/projects`);
 
       // FIXED RESPONSE STRUCTURE
       setTotalMessages(msg.data.messages.length);

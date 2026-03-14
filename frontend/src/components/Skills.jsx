@@ -4,6 +4,7 @@ import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
 import * as MdIcons from "react-icons/md";
 import "./Skills.css";
+import API from "./Api";
 
 const icons = {
   ...FaIcons,
@@ -21,7 +22,7 @@ const Skills = () => {
 
   const fetchSkills = async () => {
 
-    const res = await axios.get("http://localhost:5000/skills");
+    const res = await axios.get(`${API}/skills`);
 
     setSkills(res.data);
 

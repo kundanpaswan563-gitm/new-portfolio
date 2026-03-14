@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Addproject.css";
+import API from "../components/Api";
 
 const AddProject = () => {
 
@@ -13,7 +14,7 @@ const AddProject = () => {
 
   // fetch projects
   const fetchProjects = async () => {
-    const res = await axios.get("http://localhost:5000/projects");
+    const res = await axios.get(`${API}/projects`);
     setProjects(res.data);
   };
 
@@ -29,7 +30,7 @@ const AddProject = () => {
       return;
     }
 
-    await axios.post("http://localhost:5000/add-project", {
+    await axios.post(`${API}/add-projects`, {
       name,
       detail,
       technology,
@@ -46,7 +47,7 @@ const AddProject = () => {
 
   // delete project
   const deleteProject = async (id) => {
-    await axios.delete(`http://localhost:5000/delete-project/${id}`);
+    await axios.delete(`${API}/delete-project/${id}`);
     fetchProjects();
   };
 

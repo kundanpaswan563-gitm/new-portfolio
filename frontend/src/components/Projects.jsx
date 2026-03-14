@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Projects.css";
+import API from "./Api";
 
 const Projects = () => {
 
@@ -12,7 +13,7 @@ const Projects = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/projects");
+      const res = await axios.get(`${API}/projects`);
       setProjects(res.data);
     } catch (error) {
       console.log(error);
