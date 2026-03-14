@@ -52,7 +52,7 @@ const Message = () => {
     if (confirm.isConfirmed) {
       try {
         const res = await fetch(
-          `http://localhost:5000/message/${id}`,
+          `${API}/message/${id}`,
           {
             method: "DELETE",
             headers: {
