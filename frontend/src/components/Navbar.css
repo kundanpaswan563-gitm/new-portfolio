@@ -1,192 +1,48 @@
+/* ================= NAVBAR ================= */
 
-/* Navbar wrapper */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
   height: 70px;
-  background: rgba(2, 6, 23, 0.92);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-}
-
-/* Inner container */
-.navbar-container {
-  max-width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100%;
+  background: #022239;
+  padding: 0 8%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-/* Logo */
-.navbar-logo a {
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: #38bdf8;
-  letter-spacing: 1px;
-}
-
-.navbar-logo span {
-  color: #e5e7eb;
-}
-
-/* Menu */
-.navbar-menu {
-  list-style: none;
-  display: flex;
   align-items: center;
-  gap: 2rem;
 }
 
-.navbar-menu li {
-  position: relative;
-}
+/* ================= LOGO ================= */
 
-.navbar-menu a {
-  text-decoration: none;
-  font-size: 0.95rem;
-  color: #e5e7eb;
-  transition: color 0.3s ease;
-}
-
-/* Hover underline */
-/* .navbar-menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: #38bdf8;
-  transition: width 0.3s ease;
-}
-
-.navbar-menu a:hover {
-  color: #38bdf8;
-}
-
-.navbar-menu a:hover::after {
-  width: 100%;
-} */
-/* .navbar-menu a {
-  text-decoration: none;
-  font-size: 0.95rem;
-  color: #e5e7eb;
-  padding: 8px 18px;
-  border-radius: 30px;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-} */
-
-/* Premium Glow Background */
-/* .navbar-menu a::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(56, 189, 248, 0.3),
-    rgba(14, 165, 233, 0.3)
-  );
-  opacity: 0;
-  border-radius: 30px;
-  transition: opacity 0.4s ease;
-  z-index: -1;
-} */
-
-/* Hover Effect */
-/* .navbar-menu a:hover {
-  color: #ffffff;
-  transform: translateY(-3px) scale(1.05);
-}
-
-.navbar-menu a:hover::before {
-  opacity: 1;
-} */
-
-/* Active Link */
-/* .navbar-menu a.active {
-  background: linear-gradient(
-    120deg,
-    rgba(56, 189, 248, 0.4),
-    rgba(14, 165, 233, 0.4)
-  );
-  color: #ffffff;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
-} */
-
-/* Active link (NavLink) */
-/* .navbar-menu a.active {
-  color: #38bdf8;
-}
-
-.navbar-menu a.active::after {
-  width: 100%;
-} */
-/* 
-/* Mobile (hidden for now) */
-/* @media (max-width: 768px) {
-  .navbar-menu {
-    display: none;
-  }
-} */ 
-/* NAV LINK BASE 
-
-/* NAV LINK BASE */
-/* Navbar container (optional styling) */
-/* Navbar Layout */
-.navbar {
-  height: 70px;
-  width: 100%;
-  border: 2px orangered;
-  background: #020617;
-  padding: 15px 8%;
-  display: flex;               
-  align-items: center;
-  
-}
-
-/* Logo Styling */
 .logo {
-  height: 10px;
-  width: 30px;
-  border: 2px black;
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
-  margin-right: 500px;   /* pushes menu to right */
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .logo span {
   color: orangered;
 }
 
-/* Optional premium glow on hover */
+/* ================= MENU ================= */
 
-
-/* Menu container (keeps menu left) */
 .navbar-menu {
+  list-style: none;
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Menu links */
+.navbar-menu li {
+  position: relative;
+}
+
+/* ================= MENU LINKS ================= */
+
 .navbar-menu a {
   position: relative;
   display: inline-block;
   padding: 10px 22px;
-  margin: 0 8px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #e5e7eb;
   text-decoration: none;
   border-radius: 30px;
@@ -196,6 +52,7 @@
   z-index: 0;
 }
 
+/* ================= ANIMATION BORDER ================= */
 
 .navbar-menu a::before {
   content: "";
@@ -217,7 +74,8 @@
   opacity: 0;
 }
 
-/* Inner mask */
+/* ================= INNER MASK ================= */
+
 .navbar-menu a::after {
   content: "";
   position: absolute;
@@ -227,7 +85,8 @@
   z-index: -1;
 }
 
-/* Hover effect */
+/* ================= HOVER EFFECT ================= */
+
 .navbar-menu a:hover {
   transform: translateY(-3px);
   color: orangered;
@@ -238,8 +97,14 @@
   opacity: 1;
 }
 
-/* Rotation animation */
+/* ================= ROTATION ================= */
+
 @keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
