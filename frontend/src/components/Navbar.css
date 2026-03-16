@@ -74,6 +74,36 @@
   opacity: 0;
 }
 
+/* ================= MOBILE NAVBAR ================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 10px 5%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #000106;
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  .navbar-menu a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+}
+
 /* ================= INNER MASK ================= */
 
 .navbar-menu a::after {
