@@ -13,7 +13,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "",
+      "src": "https://your-vercel-app.vercel.app/logo192.png",
       "type": "image/png",
       "sizes": "512x512"
     }
