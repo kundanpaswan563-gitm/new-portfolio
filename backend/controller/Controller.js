@@ -21,7 +21,12 @@ const transporter = nodemailer.createTransport({
 });
 
 exports.sendMessage = async (req, res) => {
+
+
   try {
+
+    console.log("EMAIL:", process.env.EMAIL);
+console.log("PASSWORD:", process.env.PASS? "Exists" : "Missing");
     const { name, email, message } = req.body;
 
     // 1️⃣ Save message to MongoDB
