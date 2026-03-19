@@ -1,6 +1,6 @@
 /* in Layout.css or global css */
 .layout-main {
-  padding-top: 70px; /* height of navbar */
+  padding-top: 0px; /* height of navbar */
   min-height: 100vh;
   background: linear-gradient(135deg, #0f172a, #020617); 
   color: #e5e7eb;

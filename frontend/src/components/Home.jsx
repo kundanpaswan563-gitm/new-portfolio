@@ -24,7 +24,7 @@ const Home = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/cv.pdf";
+    link.href = "/CV.pdf";
     link.download = "Kundan_Paswan_CV.pdf";
     link.click();
   };
