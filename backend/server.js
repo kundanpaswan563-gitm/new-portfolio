@@ -1,4 +1,7 @@
-                    const express = require("express");
+
+
+
+const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./configue/Db");
@@ -11,8 +14,14 @@ connectDB();
 
 const app = express();
 
+// ✅ CORS (FIXED)
+app.use(cors({
+  origin: "https://kundan-new-portfolio.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 
 // Test Route
@@ -20,16 +29,12 @@ app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-// Routes (example)
-// app.use("/api/contact", require("./router/Router"));
-
+// Routes
 const Router = require("./router/Router");
 app.use("/", Router);
 
-
+// Static folder
 app.use("/uploads", express.static("uploads"));
-
-
 
 const PORT = process.env.PORT || 5000;
 
