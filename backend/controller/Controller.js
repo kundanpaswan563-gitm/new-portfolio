@@ -5,55 +5,80 @@ const Message = require("../model/messageSchema");
 
 const User = require("../model/UserSchema");  
 const bcrypt = require("bcryptjs");          
-const jwt = require("jsonwebtoken");          
-// Nodemailer transporter with TLS fix
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // false for port 587
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASS, // App Password
-  },
-  tls: {
-    rejectUnauthorized: false, // Fix self-signed certificate error
-  },
-});
+
+
+// exports.sendMessage = async (req, res) => {
+
+
+//   try {
+
+//     console.log("EMAIL:", process.env.EMAIL);
+// console.log("PASS:", process.env.PASS? "Exists" : "Missing");
+//     const { name, email, message } = req.body;
+
+//     // 1️⃣ Save message to MongoDB
+//     const newMessage = new Message({ name, email, message });
+//     await newMessage.save();
+
+//     // 2️⃣ Send email notification
+//     await transporter.sendMail({
+//       from: process.env.EMAIL,
+//       to: process.env.EMAIL,
+//       subject: "New Contact Message",
+//       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+//     });
+
+//     // 3️⃣ Respond with success
+//     res.status(200).json({
+//       success: true,
+//       message: "Message sent successfully ✅",
+//     });
+//   } catch (error) {
+//     console.log(error); // Print full error for debugging
+//     res.status(500).json({
+//       success: false,
+//       message: "Something went wrong ❌",
+//     });
+//   }
+// };
 
 exports.sendMessage = async (req, res) => {
-
-
   try {
-
-    console.log("EMAIL:", process.env.EMAIL);
-console.log("PASS:", process.env.PASS? "Exists" : "Missing");
     const { name, email, message } = req.body;
 
-    // 1️⃣ Save message to MongoDB
+    // ✅ Save message (this is working already)
     const newMessage = new Message({ name, email, message });
     await newMessage.save();
 
-    // 2️⃣ Send email notification
-    await transporter.sendMail({
-      from: process.env.EMAIL,
-      to: process.env.EMAIL,
-      subject: "New Contact Message",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-    });
+    // ✅ Try sending email (but don't break API if fails)
+    try {
+      await transporter.sendMail({
+        from: process.env.EMAIL,
+        to: process.env.EMAIL,
+        subject: "New Contact Message",
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      });
+      console.log("Email sent ✅");
+    } catch (err) {
+      console.log("Email failed ❌:", err.message);
+    }
 
-    // 3️⃣ Respond with success
+    // ✅ Always send success response
     res.status(200).json({
       success: true,
-      message: "Message sent successfully ✅",
+      message: "Message saved successfully ✅",
     });
+
   } catch (error) {
-    console.log(error); // Print full error for debugging
+    console.log("MAIN ERROR ❌:", error);
     res.status(500).json({
       success: false,
-      message: "Something went wrong ❌",
+      message: "Server error",
     });
   }
 };
+
+
 // LOGIN
 exports.loginUser = async (req, res) => {
   try {
