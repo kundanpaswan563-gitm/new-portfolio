@@ -2,7 +2,7 @@
 
 const nodemailer = require("nodemailer");
 const Message = require("../model/messageSchema");
-
+const jwt=require("jsonwebtoken");
 const User = require("../model/UserSchema");  
 const bcrypt = require("bcryptjs");          
 
