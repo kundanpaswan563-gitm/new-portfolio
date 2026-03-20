@@ -273,7 +273,7 @@
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
   .home {
-    padding: 100px 40px 0; /* ✅ FIX */
+    padding: 200px 40px 0; /* ✅ FIX */
   }
 
   .home-container {
