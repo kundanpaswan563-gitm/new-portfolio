@@ -273,8 +273,8 @@
 
 @media (max-width: 992px) {
   .home {
-  min-height: 100vh;
-  padding-top: 80px; /* adjust based on navbar height */
+  
+  padding: 0 40px; /* adjust based on navbar height */
 }
 
   .home-container {
