@@ -2,7 +2,7 @@
 
 .layout-main {
   padding-top: 0px; /* navbar height */
-  min-height: 80vh;
+  min-height: 50vh;
   background: linear-gradient(135deg, #0f172a, #020617);
   color: #e5e7eb;
   padding-left: 20px;
