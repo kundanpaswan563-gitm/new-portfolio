@@ -273,8 +273,9 @@
 
 @media (max-width: 992px) {
   .home {
-    padding: 0 40px;
-  }
+  min-height: 100vh;
+  padding-top: 80px; /* adjust based on navbar height */
+}
 
   .home-container {
     flex-direction: column;
