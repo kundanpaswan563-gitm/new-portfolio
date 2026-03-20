@@ -1,9 +1,29 @@
-/* in Layout.css or global css */
+
+
 .layout-main {
-  padding-top: 0px; /* height of navbar */
+  padding-top: 0px; /* navbar height */
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #020617); 
+  background: linear-gradient(135deg, #0f172a, #020617);
   color: #e5e7eb;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
+/* Tablet */
+@media (max-width: 768px) {
+  .layout-main {
+    padding-top: 60px; /* adjust if navbar fixed */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 
+/* Mobile */
+@media (max-width: 480px) {
+  .layout-main {
+    padding-top: 70px; /* more space for mobile navbar */
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: auto; /* prevents overflow issues */
+  }
+}
